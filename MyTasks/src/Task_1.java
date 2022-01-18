@@ -18,13 +18,13 @@ public class Task_1 {
 	public void navigate() {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\elcot\\eclipse-workspace\\firstday\\src\\resources\\chromedriver.exe");
+				"C:\\Users\\elcot\\eclipse-workspace\\firstday\\src\\resources\\chromedriver_97.0.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.flipkart.com");
 
 	}
-
+           
 	@Test(dataProvider = "login_credentials", priority = 1)
 	public void login(String username, String passw) {
 
@@ -82,7 +82,7 @@ public class Task_1 {
 		driver.findElement(By.xpath("//button[text()='ADD TO CART']")).click();
 		System.out.println(driver.getTitle() + "Added to Cart");
 
-		
+		 
 	}
 	
 
