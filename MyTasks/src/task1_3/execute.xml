@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Flipkart_Task">
+    <test name="selectProducts">
+         <classes>
+             <class name="task1_3.Login"/>
+             <class name="task1_3.CartPage"/>
+          </classes>
+     </test> <!-- Test -->
+</suite> <!-- Suite -->

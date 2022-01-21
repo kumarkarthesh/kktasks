@@ -19,7 +19,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.junit.jupiter.api.Assertions;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -82,12 +82,7 @@ public class Tests extends InitializeDriver{
 			
 	    
 			DataFormatter formatter = new DataFormatter();
-			
-			/*
-			 * input[0][0]= formatter.formatCellValue(sheet.getRow(1).getCell(0));
-			 * input[0][1] = formatter.formatCellValue(sheet.getRow(1).getCell(1));
-			 * System.out.println(input[0][0]); System.out.println(input[0][1]);
-			 */
+			 
 			for(int i= 1; i<=RowCount; i++){ 
 					  for(int j= 0;j<ColumnCount;j++){ 
 						  Row row =sheet.getRow(i);
@@ -114,7 +109,7 @@ public class Tests extends InitializeDriver{
 		action.doubleClick(driver.findElement(By.xpath("//input[@name='q']"))).perform();
 		
 		driver.findElement(By.xpath("//input[@name='q']")).sendKeys("mobiles");
-		driver.findElement(By.xpath("//button[@class='L0Z3Pu']")).click();
+		 driver.findElement(By.xpath("//button[@class='L0Z3Pu']")).click();
 		
 		//Search results
 		List<WebElement> searchResults = driver.findElements(By.xpath("//div[@class='col col-7-12']"));
@@ -264,7 +259,7 @@ public class Tests extends InitializeDriver{
 			
 			for(int i=0 ; i<searchResults.size(); i++) {
 				//Re initiating 
-				 searchResults = driver.findElements(By.xpath("//div[@class='col col-7-12']"));
+		     		 searchResults = driver.findElements(By.xpath("//div[@class='col col-7-12']"));
 				 productTitle = driver.findElements(By.xpath("//div[@class='_4rR01T']"));
 					
 				 String s= searchResults.get(i).getText();

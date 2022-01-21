@@ -5,8 +5,12 @@
     <classes>
       <class name="Tests">
         <methods>
+          <include name="selectProduct3"/>
           <include name="cart"/>
           <include name="selectProduct2"/>
+          <include name="login" invocation-numbers="0"/>
+          <include name="selectProduct4"/>
+          <include name="selectProduct1"/>
         </methods>
       </class> <!-- Tests -->
     </classes>
