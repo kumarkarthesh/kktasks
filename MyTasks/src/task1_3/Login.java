@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 public class Login extends DriverSetup {
 	
 	
-	@Test(dataProvider = "login_credentials")
+	@Test(dataProvider = "login_credentials", priority=0, alwaysRun=true)
 	public void login(String username, String passw) {
 		
 		driver.findElement(By.xpath("//a[text()='Login']")).click();
@@ -43,7 +43,6 @@ public class Login extends DriverSetup {
 			Sheet sheet = wb.getSheet("Data2");
 			int RowCount = sheet.getLastRowNum();
 			int ColumnCount = sheet.getRow(0).getLastCellNum();
-			System.out.println("Row Count  :"+RowCount+"  Column Count : "+ColumnCount);
 			Object input[][]=new Object[RowCount][ColumnCount];
 			
 			DataFormatter formatter = new DataFormatter();
