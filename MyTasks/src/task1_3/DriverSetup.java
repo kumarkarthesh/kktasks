@@ -5,16 +5,16 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.asserts.SoftAssert;
 
 public class DriverSetup extends ConfigFileReader  {
 	 ChromeDriver driver ;
 	 WebDriverWait wait ; 
 	 SoftAssert sa;
-	 //Actions actionClick;
+	 Actions actions;
 	 JavascriptExecutor js;
   
   @BeforeSuite

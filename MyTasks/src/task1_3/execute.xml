@@ -4,8 +4,8 @@
     <test name="selectProducts">
          <classes>
              <class name="task1_3.Login"/>
-              <class name="task1_3.TestClass"/>
-             <class name="task1_3.CartPage"/>
+              <class name="task1_3.TestLinks"/>
+            
           </classes>
      </test> <!-- Test -->
 </suite> <!-- Suite -->

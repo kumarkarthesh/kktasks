@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-01-21T19:59:17 IST" name="Default suite" finished-at="2022-01-21T19:59:40 IST" duration-ms="23627">
+  <suite started-at="2022-01-27T20:45:48 IST" name="Default suite" finished-at="2022-01-27T20:46:25 IST" duration-ms="37327">
     <groups>
     </groups>
-    <test started-at="2022-01-21T19:59:17 IST" name="Default test" finished-at="2022-01-21T19:59:40 IST" duration-ms="23627">
-      <class name="task1_3.CartPage">
-        <test-method is-config="true" signature="DriverInitiate()[pri:0, instance:task1_3.CartPage@342c38f8]" started-at="2022-01-21T19:58:55 IST" name="DriverInitiate" finished-at="2022-01-21T19:59:17 IST" duration-ms="21927" status="PASS">
+    <test started-at="2022-01-27T20:45:48 IST" name="Default test" finished-at="2022-01-27T20:46:25 IST" duration-ms="37327">
+      <class name="task1_3.Login">
+        <test-method is-config="true" signature="DriverInitiate()[pri:0, instance:task1_3.Login@57cf54e1]" started-at="2022-01-27T20:45:36 IST" name="DriverInitiate" finished-at="2022-01-27T20:45:48 IST" duration-ms="11795" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DriverInitiate -->
-        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:task1_3.CartPage@342c38f8]" started-at="2022-01-21T19:59:17 IST" name="login" data-provider="login_credentials" finished-at="2022-01-21T19:59:22 IST" duration-ms="4481" status="PASS">
+        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:task1_3.Login@57cf54e1]" started-at="2022-01-27T20:45:50 IST" name="login" data-provider="login_credentials" finished-at="2022-01-27T20:46:25 IST" duration-ms="34661" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -24,42 +24,16 @@
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="Cart()[pri:1, instance:task1_3.CartPage@342c38f8]" started-at="2022-01-21T19:59:22 IST" name="Cart" finished-at="2022-01-21T19:59:40 IST" duration-ms="18790" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[element click intercepted: Element <div class="_3dsJAO">...</div> is not clickable at point (345, 564). Other element would receive the click: <div class="VUS-tD eBV0fb">...</div>
-  (Session info: chrome=97.0.4692.71)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'HP', ip: '192.168.173.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\elcot\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53476}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 07434415fe69a3fcb16c4bf2666db5c7]]>
+              <![CDATA[Login failed expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="_3dsJAO">...</div> is not clickable at point (345, 564). Other element would receive the click: <div class="VUS-tD eBV0fb">...</div>
-  (Session info: chrome=97.0.4692.71)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'HP', ip: '192.168.173.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\elcot\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53476}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 07434415fe69a3fcb16c4bf2666db5c7
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at task1_3.CartPage.Cart(CartPage.java:54)
+              <![CDATA[java.lang.AssertionError: Login failed expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at task1_3.Login.login(Login.java:73)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -90,11 +64,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Cart -->
-      </class> <!-- task1_3.CartPage -->
+        </test-method> <!-- login -->
+      </class> <!-- task1_3.Login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

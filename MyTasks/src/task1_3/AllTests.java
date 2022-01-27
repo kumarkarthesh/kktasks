@@ -137,7 +137,7 @@ public class AllTests extends DriverSetup {
 				driver.switchTo().window(secondwind);
 				String actualProduct = driver.findElement(By.xpath("//span[@class='B_NuCI']")).getText();
 				assertTrue(actualProduct.contains(selectedProduct));
-				
+				//driver.switchTo().def
 				
 				
 			//Adding to Cart
