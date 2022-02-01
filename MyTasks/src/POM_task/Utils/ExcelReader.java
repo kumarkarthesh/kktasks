@@ -1,4 +1,4 @@
-package POM_task.Pages.Utils;
+package POM_task.Utils;
 
 public class ExcelReader {
 

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import POM_task.Pages.Utils.WebDriverHelp;
+import POM_task.Utils.WebDriverHelp;
 
 public class HomePage extends BasePage {
 	

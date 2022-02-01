@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import POM_task.Pages.HomePage;
 import POM_task.Pages.ItemdetailsPage;
 import POM_task.Pages.SearchResultsPage;
-import POM_task.Pages.Utils.BaseTest;
+import POM_task.Utils.BaseTest;
 
 
 public class SmokeTest extends BaseTest {

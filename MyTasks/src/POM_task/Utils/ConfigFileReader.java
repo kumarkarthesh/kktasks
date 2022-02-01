@@ -1,4 +1,4 @@
-package POM_task.Pages.Utils;
+package POM_task.Utils;
 
 import java.io.File;
 import java.io.FileInputStream;
