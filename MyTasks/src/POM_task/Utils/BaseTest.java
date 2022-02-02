@@ -4,11 +4,12 @@ package POM_task.Utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-public class BaseTest extends ConfigFileReader {
+public class BaseTest  {
 	static WebDriver driver;
-	
+	public ConfigFileReader config= new ConfigFileReader();
 	
 	public static WebDriver getDriver() {
 		return driver;
@@ -18,15 +19,16 @@ public class BaseTest extends ConfigFileReader {
 	@BeforeClass
 	public void createDriver() {
 		 
-		System.setProperty(prop.getProperty("DriverName"), prop.getProperty("DriverPath"));
+		System.setProperty(config.prop.getProperty("DriverName"), config.prop.getProperty("DriverPath"));
 		 driver = new ChromeDriver();
-		 driver.get(prop.getProperty("URL"));
+		 driver.get(config.prop.getProperty("URL"));
+		 driver.manage().window().maximize();
 		 WebDriverHelp.implicitWait();
 		
 	}
 	
 	
-	public void closeDriver() {
+	public void closeDriver() throws Exception {
 		//driver.close();
 		driver.quit();
 	}

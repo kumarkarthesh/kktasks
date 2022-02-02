@@ -45,7 +45,7 @@ public class AllTests extends DriverSetup {
 	}
 	
 	@DataProvider(name = "login_credentials")
-	public Object[][] loginData() throws EncryptedDocumentException, IOException {
+	public Object[][] loginData()  throws EncryptedDocumentException, IOException {
 			FileInputStream inp = new FileInputStream("C:\\Users\\elcot\\eclipse-workspace\\Project Data\\login_details.xlsx");
 			Workbook wb = WorkbookFactory.create(inp);
 			Sheet sheet = wb.getSheet("Data2");

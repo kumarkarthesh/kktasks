@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="POM_task.SmokeTest">
+      <class name="POM_task.Test.SmokeTest">
         <methods>
-          <include name="createDriver"/>
-          <include name="verifyHomepage"/>
           <include name="setup"/>
+          <include name="verifyHomepage"/>
+          <include name="createDriver"/>
         </methods>
-      </class> <!-- POM_task.SmokeTest -->
+      </class> <!-- POM_task.Test.SmokeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

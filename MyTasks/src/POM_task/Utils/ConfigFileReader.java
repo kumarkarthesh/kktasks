@@ -5,10 +5,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ConfigFileReader  {
-	
-	 Properties prop;
-	
+public class ConfigFileReader {
+	public Properties prop;
+
 	public ConfigFileReader() {
 		File file = new File ("C:\\Users\\elcot\\git\\repository\\MyTasks\\src\\task1_3\\Configurations\\config.properties");
 		FileInputStream fileInput = null;
