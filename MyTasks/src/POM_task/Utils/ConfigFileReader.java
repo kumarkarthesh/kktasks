@@ -9,7 +9,7 @@ public class ConfigFileReader {
 	public Properties prop;
 
 	public ConfigFileReader() {
-		File file = new File ("C:\\Users\\elcot\\git\\repository\\MyTasks\\src\\task1_3\\Configurations\\config.properties");
+		File file = new File ("C:\\Users\\elcot\\git\\repository\\MyTasks\\src\\POM_task\\Utils\\config.properties");
 		FileInputStream fileInput = null;
 		try {
 		

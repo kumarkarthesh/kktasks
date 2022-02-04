@@ -8,7 +8,9 @@ import POM_task.Utils.WebDriverHelp;
 
 
 public class LoginPage extends BasePage {
-
+	
+	
+	
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -19,7 +21,7 @@ public class LoginPage extends BasePage {
 		private WebElement _userName;
 	
 	public void username() {
-		WebDriverHelp.explicitWait(_userName);
+		//WebDriverHelp.explicitWait_Clickable(_userName);
 		_userName.click();
 		System.out.println("UserName : "+ config.prop.getProperty("Username"));
 		_userName.sendKeys(config.prop.getProperty("Username"));
@@ -30,7 +32,7 @@ public class LoginPage extends BasePage {
 		private WebElement _password;
 	
 	public void password() {
-		WebDriverHelp.explicitWait(_password);
+		//WebDriverHelp.explicitWait_Clickable(_password);
 		_password.click();
 		System.out.println("Password : "+config.prop.getProperty("Password"));
 		_password.sendKeys(config.prop.getProperty("Password"));
@@ -40,8 +42,10 @@ public class LoginPage extends BasePage {
 		private WebElement _loginButton;
 	
 	public HomePage loginButtonClick() {
-		WebDriverHelp.explicitWait(_loginButton);
+		//WebDriverHelp.explicitWait_Clickable(_loginButton);
 		_loginButton.click();
+		WebDriverHelp.explicitWait_invisible(_loginButton);
+		//WebDriverHelp.explicitWait_stale(get_profileMenu());
 		return new HomePage(driver);
 	}
 	

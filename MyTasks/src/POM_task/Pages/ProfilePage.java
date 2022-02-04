@@ -18,7 +18,7 @@ public class ProfilePage extends BasePage {
 	private WebElement _profileNmae;
 	
 	public String profileName() {
-		WebDriverHelp.explicitWait(_profileNmae);
+		WebDriverHelp.explicitWait_Clickable(_profileNmae);
 		String s = _profileNmae.getText();
 		return s;
 	}

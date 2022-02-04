@@ -1,8 +1,10 @@
 package POM_task.Pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
@@ -10,7 +12,7 @@ import POM_task.Utils.WebDriverHelp;
 
 public class HomePage extends BasePage {
 	
-	WebDriver driver;
+	
 	Actions actions;
 	//Constructor, Elements & Actions
 	public HomePage(WebDriver driver) {
@@ -25,7 +27,7 @@ public class HomePage extends BasePage {
 
 	//Action
 	public void clickLoginclose() {
-		WebDriverHelp.explicitWait(_loginClose);
+		WebDriverHelp.explicitWait_Clickable(_loginClose);
 		_loginClose.click();
 	}
 	
@@ -33,7 +35,7 @@ public class HomePage extends BasePage {
 	private WebElement _searchBox;
 	
 	public void inputSearchtext(String s) {
-		WebDriverHelp.explicitWait(_searchBox);
+		WebDriverHelp.explicitWait_Clickable(_searchBox);
 		_searchBox.click();
 		_searchBox.sendKeys(s);
 	}
@@ -42,7 +44,7 @@ public class HomePage extends BasePage {
 	private WebElement _buttonSearch;
 	
 	public SearchResultsPage clickSearchButton() {
-		WebDriverHelp.explicitWait(_buttonSearch);
+		 WebDriverHelp.explicitWait_Clickable(_buttonSearch);
 		_buttonSearch.click();
 		return new SearchResultsPage(driver); 
 	}
@@ -51,20 +53,18 @@ public class HomePage extends BasePage {
 		private WebElement _loginButton;
 	
 	public LoginPage clickLoginButton() {
-		WebDriverHelp.explicitWait(_buttonSearch);
+		WebDriverHelp.explicitWait_Clickable(_buttonSearch);
 		_loginButton.click();
 		return new LoginPage(driver);
 		
 	}
 	
-	@FindBy(xpath="//div[@class='_1cmsER']/following-sibling::div[1]//div[@class='exehdJ']")
-	private WebElement _profileMenu;
-	
+	//@FindBy(xpath="//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[3]/div/div/div/div")
 	
 	public void moveOverMenu() {
-	
+		WebDriverHelp.explicitWait_visible(get_profileMenu());
 		actions = new  Actions(driver);
-		actions.moveToElement(_profileMenu).perform();
+		actions.moveToElement(get_profileMenu()).perform();
 		}
 	
 	@FindBy(xpath="//div[text()='My Profile']")
@@ -72,13 +72,36 @@ public class HomePage extends BasePage {
 	
 
 	public ProfilePage clickMyProfile() {
-		WebDriverHelp.explicitWait(_myProfile);
+		WebDriverHelp.explicitWait_Clickable(_myProfile);
 		_myProfile.click();
 		return new ProfilePage(driver);
 	}
-	
+
 	
 
+		/*
+		 * for (WebElement webElement : links) {
+		 * WebDriverHelp.explicitWait_visible(webElement);
+		 * System.out.println(webElement.getText()); }
+		 */
+	
+	
+	
+	/*
+	 * @FindBy(tagName="a") private List<WebElement> _allLinks;
+	 * 
+	 * 
+	 * public void getLinks() { // TODO Auto-generated method stub`
+	 * 
+	 * System.out.println("All Links ..."); for (WebElement webElement : _allLinks)
+	 * { WebDriverHelp.explicitWait_visible(webElement);
+	 * System.out.println(webElement); System.out.println(webElement.getText()); }
+	 * 
+	 * }
+	 * 
+	 */
+	
+	
 }
 
 
