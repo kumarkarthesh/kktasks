@@ -7,9 +7,9 @@
         <methods>
           <include name="closeDriver"/>
           <include name="setup"/>
+          <include name="addToCart"/>
           <include name="login"/>
           <include name="createDriver"/>
-          <include name="linlValidation"/>
         </methods>
       </class> <!-- POM_task.Test.SmokeTest -->
     </classes>

@@ -1,19 +1,24 @@
 package POM_task.Test;
 
+import static POM_task.Utils.ConfigFileReader.prop;
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+
 import POM_task.Pages.HomePage;
-import POM_task.Pages.ItemdetailsPage;
+import POM_task.Pages.ItemDetailsPage;
 import POM_task.Pages.LoginPage;
 import POM_task.Pages.ProfilePage;
 import POM_task.Pages.SearchResultsPage;
 import POM_task.Utils.BaseTest;
-
+import POM_task.Utils.ConfigFileReader;
+import POM_task.Utils.WebDriverHelp;
 
 public class SmokeTest extends BaseTest {
 	
@@ -22,34 +27,52 @@ public class SmokeTest extends BaseTest {
 	HomePage homePage;
 	ProfilePage profilePage;
 	SearchResultsPage searchResultsPage;
-	ItemdetailsPage itemDetailsPage;
-	
+	ItemDetailsPage itemDetailsPage;
+
 	
 	
 	@BeforeClass
 	public void setup() {
 		
-		
-	}
+		loginPage = new LoginPage(getDriver());
+		util = new WebDriverHelp();
+		config = new ConfigFileReader();
 	
+	}
 	
 	@Test
 	public void login() throws IOException, InterruptedException {
 		
-		loginPage = new LoginPage(getDriver());
+		
+		System.out.println(prop.getProperty("ReportPath"));
+		
 		System.out.println("Login test Started..... ");
 		
 		//Login
 		loginPage.username();
 		loginPage.password();
 		homePage = loginPage.loginButtonClick();
-
+		 
 		//Login validation
+		getDriver().navigate().refresh();
 		System.out.println("=========\nHanded to hmompeage .");
-		System.out.println(homePage.get_profileMenu().getText());
+		System.out.println("Profile name : " + homePage.get_profileMenu().getText() + "\nName from config file : "+ prop.getProperty("ProfileName")) ;
 		String actualName = homePage.get_profileMenu().getText();
-		util.takeSnap();
-		Assert.assertEquals(actualName, "Karthesh");
+		
+		
+		if (actualName.equals(ConfigFileReader.prop.getProperty("ProfileName"))) {
+			test.log(Status.PASS, "Passed ttest nowe");
+			//test.log(LogStatus.PASS, "Login Test Passed");
+			assertTrue(true);
+		}
+		else {
+			util.takeSnap();
+			//test.fail(MediaEntityBuilder.createScreenCaptureFromPath);
+			test.log(Status.FAIL, "login test failed");
+			assertTrue(false);
+	
+		}
+		eReports.flush();
 		
 		
 		//homePage.moveOverMenu();
@@ -58,7 +81,6 @@ public class SmokeTest extends BaseTest {
 		//System.out.println("=========\n Profile Page ");
 		//String actualName = profilePage.profileName();
 		
-	
 		
 		
 		//System.out.println(we);
@@ -91,14 +113,16 @@ public class SmokeTest extends BaseTest {
 	@Test(dependsOnMethods= {"login"})
 	//@Test
 	public void linlValidation() throws IOException  {
-		
+			
+		 
 		System.out.println("========\n Link Validation Method ");
 
-		homePage.getLinks();
+		homePage.validateLinks();
 		
 			
 		
 	}
+	
 	
 	
 }

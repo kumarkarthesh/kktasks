@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test_Suite">
+<listeners>
+<listener class-name ="POM_task.Utils.Listeners"> 	</listener>
+</listeners>
+    <test name="Test_Flipkart">
+         <classes>
+             <class name="POM_task.Test.SmokeTest"/>
+          </classes>
+     </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigFileReader {
-	public Properties prop;
+	public static Properties prop;
 
 	public ConfigFileReader() {
 		File file = new File ("C:\\Users\\elcot\\git\\repository\\MyTasks\\src\\POM_task\\Utils\\config.properties");

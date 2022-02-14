@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-04T21:29:42 IST" name="Default suite" finished-at="2022-02-04T21:30:17 IST" duration-ms="35095">
+  <suite started-at="2022-02-14T19:32:18 IST" name="Test_Suite" finished-at="2022-02-14T19:32:47 IST" duration-ms="29135">
     <groups>
     </groups>
-    <test started-at="2022-02-04T21:29:42 IST" name="Default test" finished-at="2022-02-04T21:30:17 IST" duration-ms="35095">
+    <test started-at="2022-02-14T19:32:18 IST" name="Test_Flipkart" finished-at="2022-02-14T19:32:47 IST" duration-ms="29135">
       <class name="POM_task.Test.SmokeTest">
-        <test-method is-config="true" signature="createDriver()[pri:0, instance:POM_task.Test.SmokeTest@593aaf41]" started-at="2022-02-04T21:29:42 IST" name="createDriver" finished-at="2022-02-04T21:29:58 IST" duration-ms="15998" status="PASS">
+        <test-method is-config="true" signature="createDriver()[pri:0, instance:POM_task.Test.SmokeTest@1af2d44a]" started-at="2022-02-14T19:32:18 IST" name="createDriver" finished-at="2022-02-14T19:32:42 IST" duration-ms="24004" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createDriver -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:POM_task.Test.SmokeTest@593aaf41]" started-at="2022-02-04T21:29:58 IST" name="setup" finished-at="2022-02-04T21:29:58 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:POM_task.Test.SmokeTest@1af2d44a]" started-at="2022-02-14T19:32:42 IST" name="setup" finished-at="2022-02-14T19:32:42 IST" duration-ms="115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="login()[pri:0, instance:POM_task.Test.SmokeTest@593aaf41]" started-at="2022-02-04T21:29:58 IST" name="login" finished-at="2022-02-04T21:30:01 IST" duration-ms="2127" status="PASS">
+        <test-method signature="login()[pri:0, instance:POM_task.Test.SmokeTest@1af2d44a]" started-at="2022-02-14T19:32:43 IST" name="login" finished-at="2022-02-14T19:32:47 IST" duration-ms="4217" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="linlValidation()[pri:0, instance:POM_task.Test.SmokeTest@593aaf41]" started-at="2022-02-04T21:30:01 IST" name="linlValidation" finished-at="2022-02-04T21:30:17 IST" depends-on-methods="POM_task.Test.SmokeTest.login" duration-ms="16812" status="PASS">
+        <test-method signature="addToCart()[pri:0, instance:POM_task.Test.SmokeTest@1af2d44a]" started-at="2022-02-14T19:32:47 IST" name="addToCart" finished-at="2022-02-14T19:32:47 IST" depends-on-methods="POM_task.Test.SmokeTest.login" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- linlValidation -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:POM_task.Test.SmokeTest@593aaf41]" started-at="2022-02-04T21:30:18 IST" name="closeDriver" finished-at="2022-02-04T21:30:49 IST" duration-ms="30971" status="PASS">
+        </test-method> <!-- addToCart -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:POM_task.Test.SmokeTest@1af2d44a]" started-at="2022-02-14T19:32:48 IST" name="closeDriver" finished-at="2022-02-14T19:33:49 IST" duration-ms="61296" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
       </class> <!-- POM_task.Test.SmokeTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test_Flipkart -->
+  </suite> <!-- Test_Suite -->
 </testng-results>

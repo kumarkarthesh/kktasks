@@ -38,7 +38,7 @@ public class WebDriverHelp extends BaseTest {
 		try {
 			TakesScreenshot scrnsct = ((TakesScreenshot)getDriver());
 			File srcFile = scrnsct.getScreenshotAs(OutputType.FILE);
-			System.out.println(config.prop.getProperty("URL"));
+			
 			File dest = new File(config.prop.getProperty("SnapshotPath"));
 			FileUtils.copyFile(srcFile, dest);
 		} catch (WebDriverException e) {

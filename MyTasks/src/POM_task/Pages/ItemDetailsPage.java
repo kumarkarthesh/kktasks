@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ItemdetailsPage extends BasePage {
+public class ItemDetailsPage extends BasePage {
 
-	public ItemdetailsPage(WebDriver driver) {
+	public ItemDetailsPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 	}

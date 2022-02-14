@@ -19,7 +19,7 @@ public class SearchResultsPage extends BasePage {
 	@FindBy(xpath="/html/body/div[1]/div/div[3]/div[1]/div[2]/div[2]/div/div/div/a/div[2]/div[1]/div[1]")
 	private WebElement _item;
 	
-	public ItemdetailsPage itemSelect() {
+	public ItemDetailsPage itemSelect() {
 		_item.click();
 		
 		String parent = driver.getWindowHandle();
@@ -32,7 +32,7 @@ public class SearchResultsPage extends BasePage {
 				driver.switchTo().window(childWind);
 			}
 		
-		return new ItemdetailsPage(driver);
+		return new ItemDetailsPage(driver);
 		
 	}
 	
