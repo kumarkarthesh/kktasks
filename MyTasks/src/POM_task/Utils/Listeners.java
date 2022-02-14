@@ -74,6 +74,7 @@ public class Listeners implements ITestListener {
 		report = new ExtentReports();
 		reports = new ExtentSparkReporter(ConfigFileReader.prop.getProperty("ReportPath"));
 		report.attachReporter(reports);
+		
 	}
 
 	@Override
