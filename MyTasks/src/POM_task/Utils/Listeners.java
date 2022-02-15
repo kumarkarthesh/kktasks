@@ -1,11 +1,13 @@
 package POM_task.Utils;
 
 import org.testng.ITestContext;
+import static POM_task.Utils.ConfigFileReader.prop;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import POM_task.Utils.ConfigFileReader;
@@ -39,7 +41,8 @@ public class Listeners implements ITestListener {
 		
 		//TestListener.super.onTestFailure(result);
 		System.out.println(result.getMethod().getMethodName()+" Test Failed ");
-		test.log(Status.INFO, result.getMethod().getMethodName() + "test failed");
+		test.log(Status.INFO, result.getMethod().getMethodName() + ". test failed");
+		test.fail(MediaEntityBuilder.createScreenCaptureFromPath(prop.getProperty("SnapshotPath")).build());
 	}
 
 	@Override
@@ -48,6 +51,7 @@ public class Listeners implements ITestListener {
 		//ITestListener.super.onTestSkipped(result);
 		System.out.println(result.getMethod().getMethodName()+" Test Skipped ");
 		test.log(Status.INFO, result.getMethod().getMethodName() + "test Skipped");
+		
 	}
 
 	@Override
@@ -60,7 +64,7 @@ public class Listeners implements ITestListener {
 
 	@Override
 	public void onTestFailedWithTimeout(ITestResult result) {
-		// TODO Auto-generated method stub
+	
 		//ITestListener.super.onTestFailedWithTimeout(result);
 		System.out.println(result.getMethod().getMethodName()+" Test failed with timeout ");
 		test.log(Status.INFO, result.getMethod().getMethodName() + "test failed with timeout ");

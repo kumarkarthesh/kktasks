@@ -9,7 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.Status;
+
 
 import POM_task.Pages.HomePage;
 import POM_task.Pages.ItemDetailsPage;
@@ -43,11 +43,7 @@ public class SmokeTest extends BaseTest {
 	@Test
 	public void login() throws IOException, InterruptedException {
 		
-		
-		System.out.println(prop.getProperty("ReportPath"));
-		
-		System.out.println("Login test Started..... ");
-		
+			
 		//Login
 		loginPage.username();
 		loginPage.password();
@@ -55,24 +51,15 @@ public class SmokeTest extends BaseTest {
 		 
 		//Login validation
 		getDriver().navigate().refresh();
-		System.out.println("=========\nHanded to hmompeage .");
-		System.out.println("Profile name : " + homePage.get_profileMenu().getText() + "\nName from config file : "+ prop.getProperty("ProfileName")) ;
 		String actualName = homePage.get_profileMenu().getText();
 		
 		
-		if (actualName.equals(ConfigFileReader.prop.getProperty("ProfileName"))) {
-			test.log(Status.PASS, "Passed ttest nowe");
-			//test.log(LogStatus.PASS, "Login Test Passed");
-			assertTrue(true);
-		}
-		else {
+		if (!	(actualName.equals(ConfigFileReader.prop.getProperty("ProfileName")))	) {
+
 			util.takeSnap();
-			//test.fail(MediaEntityBuilder.createScreenCaptureFromPath);
-			test.log(Status.FAIL, "login test failed");
 			assertTrue(false);
-	
+			
 		}
-		eReports.flush();
 		
 		
 		//homePage.moveOverMenu();
@@ -112,15 +99,13 @@ public class SmokeTest extends BaseTest {
 	
 	@Test(dependsOnMethods= {"login"})
 	//@Test
-	public void linlValidation() throws IOException  {
+	public void linkValidation() throws IOException  {
 			
 		 
 		System.out.println("========\n Link Validation Method ");
 
 		homePage.validateLinks();
-		
 			
-		
 	}
 	
 	

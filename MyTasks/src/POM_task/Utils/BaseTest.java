@@ -1,5 +1,7 @@
 package POM_task.Utils;
 
+import static POM_task.Utils.ConfigFileReader.prop;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
@@ -22,11 +24,11 @@ public class BaseTest  {
 
 	@BeforeClass
 	public void createDriver() {
-		 
+		  
 		
-		System.setProperty(config.prop.getProperty("DriverName"), config.prop.getProperty("DriverPath"));
+		System.setProperty(prop.getProperty("DriverName"), prop.getProperty("DriverPath"));
 		 driver = new ChromeDriver();
-		 driver.get(config.prop.getProperty("URL"));
+		 driver.get(prop.getProperty("URL"));
 		// driver.manage().window().maximize();
 		// WebDriverHelp.implicitWait();
 		 eReports= new ExtentReports();
