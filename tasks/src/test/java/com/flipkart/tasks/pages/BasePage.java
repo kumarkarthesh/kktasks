@@ -12,8 +12,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.asserts.SoftAssert;
 
-import com.flipkart.tasks.util.WebDriverHelp;
 import com.flipkart.tasks.util.BaseTest;
+import com.flipkart.tasks.util.WebDriverHelp;
 
 
 
@@ -21,13 +21,15 @@ import com.flipkart.tasks.util.BaseTest;
 public class BasePage  {
 	public String parent;
 	Actions actions;
-	public WebDriver driver;
+	WebDriver driver;
 	SoftAssert sa = new SoftAssert();
+	public static WebDriverHelp util= new WebDriverHelp();;
 	
 	public BasePage(WebDriver driver) {
+		
 		this.driver= driver;
 		PageFactory.initElements(driver, this);
-		
+
 	}
 	
 	@FindBy(xpath="//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[3]/div/div")
@@ -55,12 +57,12 @@ public class BasePage  {
 	public void inputSearch(String data) {
 		new Actions(driver).doubleClick(_searchBox).perform();
 		_searchBox.sendKeys(data);
-		WebDriverHelp.explicitWait_Clickable(_searchBtn);
+		util.explicitWait_Clickable(_searchBtn,driver);
 		_searchBtn.click();
 		
 	}
 
-	@FindBy(xpath="/html/body/div[2]/div/div/button")
+	@FindBy(xpath="//div[@class='_2QfC02']/button")
 	private WebElement _closeLoginBtn;
 	
 	
@@ -147,6 +149,12 @@ public class BasePage  {
 			}
 		driver.switchTo().window(parent);
 		
+	}
+
+
+
+	public WebDriver getDriver() {
+		return driver;
 	}
 	
 	

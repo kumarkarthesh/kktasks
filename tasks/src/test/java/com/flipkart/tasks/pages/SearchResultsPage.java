@@ -12,7 +12,7 @@ import com.flipkart.tasks.util.WebDriverHelp;
 
 public class SearchResultsPage extends BasePage {
 	public String parent;
-	
+	WebDriver driver;
 	public SearchResultsPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -24,7 +24,7 @@ public class SearchResultsPage extends BasePage {
 	private List<WebElement> _items;
 	
 	public List<WebElement> get_items() {
-		WebDriverHelp.explicitWait_visible(_items);
+		util.explicitWait_visible(_items);
 		return _items;
 	}
 

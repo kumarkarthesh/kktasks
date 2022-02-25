@@ -9,7 +9,7 @@ import com.flipkart.tasks.util.WebDriverHelp;
 
 
 public class ProfilePage extends BasePage {
-
+	WebDriver driver;
 	public ProfilePage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -20,7 +20,7 @@ public class ProfilePage extends BasePage {
 	private WebElement _profileNmae;
 	
 	public String profileName() {
-		WebDriverHelp.explicitWait_Clickable(_profileNmae);
+		util.explicitWait_Clickable(_profileNmae);
 		String s = _profileNmae.getText();
 		return s;
 	}

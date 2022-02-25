@@ -11,8 +11,8 @@ import com.flipkart.tasks.util.WebDriverHelp;
 
 public class HomePage extends BasePage {
 	
-	
-	Actions actions;
+	WebDriver driver;
+	public Actions actions;
 	//Constructor, Elements & Actions
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -26,7 +26,7 @@ public class HomePage extends BasePage {
 
 	//Action
 	public void clickLoginclose() {
-		WebDriverHelp.explicitWait_Clickable(_loginClose);
+		util.explicitWait_Clickable(_loginClose, driver);
 		_loginClose.click();
 	}
 	
@@ -34,7 +34,7 @@ public class HomePage extends BasePage {
 	private WebElement _searchBox;
 	
 	public void inputSearchtext(String s) {
-		WebDriverHelp.explicitWait_Clickable(_searchBox);
+		util.explicitWait_Clickable(_searchBox, driver);
 		_searchBox.click();
 		_searchBox.sendKeys(s);
 	}
@@ -43,7 +43,7 @@ public class HomePage extends BasePage {
 	private WebElement _buttonSearch;
 	
 	public SearchResultsPage clickSearchButton() {
-		 WebDriverHelp.explicitWait_Clickable(_buttonSearch);
+		 util.explicitWait_Clickable(_buttonSearch, driver);
 		_buttonSearch.click();
 		return new SearchResultsPage(driver); 
 	}
@@ -52,7 +52,7 @@ public class HomePage extends BasePage {
 		private WebElement _loginButton;
 	
 	public LoginPage clickLoginButton() {
-		WebDriverHelp.explicitWait_Clickable(_buttonSearch);
+		util.explicitWait_Clickable(_buttonSearch, driver);
 		_loginButton.click();
 		return new LoginPage(driver);
 		
@@ -61,7 +61,7 @@ public class HomePage extends BasePage {
 	//@FindBy(xpath="//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[3]/div/div/div/div")
 	
 	public void moveOverMenu() {
-		WebDriverHelp.explicitWait_visible(get_profileMenu());
+		util.explicitWait_visible(get_profileMenu(), driver);
 		actions = new  Actions(driver);
 		actions.moveToElement(get_profileMenu()).perform();
 		}
@@ -71,7 +71,7 @@ public class HomePage extends BasePage {
 	
 
 	public ProfilePage clickMyProfile() {
-		WebDriverHelp.explicitWait_Clickable(_myProfile);
+		util.explicitWait_Clickable(_myProfile, driver);
 		_myProfile.click();
 		return new ProfilePage(driver);
 	}
@@ -82,6 +82,14 @@ public class HomePage extends BasePage {
 	
 	public WebElement clickLogout() {
 		return _logout;
+	}
+	
+	@FindBy(xpath="//div[@class='_1psGvi _3BvnxG']/div/a")
+	private WebElement _loginElement;
+	
+	public WebElement getLoginElement() {
+		util.explicitWait_visible(_loginElement, driver);
+		return  _loginElement;
 	}
 	
 

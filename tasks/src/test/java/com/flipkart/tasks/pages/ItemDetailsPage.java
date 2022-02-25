@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import com.flipkart.tasks.util.WebDriverHelp;
 
 public class ItemDetailsPage extends BasePage {
-
+	WebDriver driver;
 	public ItemDetailsPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
@@ -26,7 +26,7 @@ public class ItemDetailsPage extends BasePage {
 	private WebElement _addToCartBtn;
 
 	public WebElement addToCartBtn() {
-		WebDriverHelp.explicitWait_visible(_addToCartBtn);
+		util.explicitWait_visible(_addToCartBtn);
 		return _addToCartBtn;
 	}
 	

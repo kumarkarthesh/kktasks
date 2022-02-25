@@ -5,6 +5,7 @@ package com.flipkart.tasks.util;
 import static com.flipkart.tasks.util.ConfigFileReader.getData;
 
 import java.io.File;
+import java.time.Duration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,38 +19,31 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
 public class BaseTest  {
-	public static WebDriverHelp util;
-	public static WebDriver driver;
-	
+	public  WebDriver driver;
 	public ConfigFileReader config = new ConfigFileReader() ;
 	public ExtentReports eReports;
 	public ExtentTest test;
 	public static WebDriverWait wait;
+	public  WebDriverHelp util;
 	static {
 	    File log4j2File = new File(getData().getProperty("LogFilePath"));
 	    System.setProperty("log4j2.configurationFile", log4j2File.toURI().toString());
 	}
  
+	
 	public static final Logger log= LogManager.getLogger(BaseTest.class);
 	
-	public static WebDriver getDriver() {  
-		return driver;
-	}
-
-
-
-	@SuppressWarnings("deprecation")
 	@BeforeClass
 	public void createDriver() {
 		  
 		
 		System.setProperty(getData().getProperty("DriverName"), getData().getProperty("DriverPath"));
 		 driver= new ChromeDriver();
-		
+		util = new WebDriverHelp();
 		 driver.get(getData().getProperty("URL"));
 		// driver.manage().window().maximize();
 		// WebDriverHelp.implicitWait();
-		 wait = new WebDriverWait(driver, 30);
+		 wait = new WebDriverWait(driver, Duration.ofSeconds(30000));
 	}
 	
 	
