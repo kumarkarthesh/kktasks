@@ -1,47 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="6" passed="3" failed="0" skipped="0">
+<testng-results ignored="3" total="5" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-25T22:16:22 IST" name="Suite" finished-at="2022-02-25T22:17:14 IST" duration-ms="51812">
+  <suite started-at="2022-03-02T19:54:40 IST" name="Default suite" finished-at="2022-03-02T19:55:19 IST" duration-ms="39113">
     <groups>
     </groups>
-    <test started-at="2022-02-25T22:16:22 IST" name="TestSmoke" finished-at="2022-02-25T22:17:14 IST" duration-ms="51812">
+    <test started-at="2022-03-02T19:54:40 IST" name="Default test" finished-at="2022-03-02T19:55:19 IST" duration-ms="39113">
       <class name="com.flipkart.tasks.test.SmokeTest">
-        <test-method is-config="true" signature="createDriver()[pri:0, instance:com.flipkart.tasks.test.SmokeTest@292d1c71]" started-at="2022-02-25T22:16:23 IST" name="createDriver" finished-at="2022-02-25T22:16:50 IST" duration-ms="26966" status="PASS">
+        <test-method is-config="true" signature="createDriver()[pri:0, instance:com.flipkart.tasks.test.SmokeTest@277f7dd3]" started-at="2022-03-02T19:54:40 IST" name="createDriver" finished-at="2022-03-02T19:54:54 IST" duration-ms="14047" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createDriver -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.flipkart.tasks.test.SmokeTest@292d1c71]" started-at="2022-02-25T22:16:50 IST" name="setup" finished-at="2022-02-25T22:16:50 IST" duration-ms="25" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.flipkart.tasks.test.SmokeTest@277f7dd3]" started-at="2022-03-02T19:54:54 IST" name="setup" finished-at="2022-03-02T19:54:55 IST" duration-ms="98" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="login()[pri:0, instance:com.flipkart.tasks.test.SmokeTest@292d1c71]" started-at="2022-02-25T22:16:50 IST" name="login" finished-at="2022-02-25T22:16:59 IST" duration-ms="8902" status="PASS">
+        <test-method signature="login()[pri:0, instance:com.flipkart.tasks.test.SmokeTest@277f7dd3]" started-at="2022-03-02T19:54:55 IST" name="login" finished-at="2022-03-02T19:54:58 IST" duration-ms="3841" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="cartTest()[pri:0, instance:com.flipkart.tasks.test.SmokeTest@292d1c71]" started-at="2022-02-25T22:16:59 IST" name="cartTest" finished-at="2022-02-25T22:17:14 IST" depends-on-methods="com.flipkart.tasks.test.SmokeTest.login" duration-ms="15290" status="PASS">
+        <test-method signature="addCart(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.flipkart.tasks.test.SmokeTest@277f7dd3]" started-at="2022-03-02T19:55:00 IST" name="addCart" data-provider="searchData" finished-at="2022-03-02T19:55:19 IST" depends-on-methods="com.flipkart.tasks.test.SmokeTest.login" duration-ms="18973" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mobiles]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[POCO]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[4 GB RAM]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[64 GB ]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cartTest -->
-      </class> <!-- com.flipkart.tasks.test.SmokeTest -->
-      <class name="com.flipkart.tasks.test.LoginTest">
-        <test-method is-config="true" signature="createDriver()[pri:0, instance:com.flipkart.tasks.test.LoginTest@2756c0a7]" started-at="2022-02-25T22:16:23 IST" name="createDriver" finished-at="2022-02-25T22:16:49 IST" duration-ms="26325" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createDriver -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.flipkart.tasks.test.LoginTest@2756c0a7]" started-at="2022-02-25T22:16:49 IST" name="setup" finished-at="2022-02-25T22:16:49 IST" duration-ms="424" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="loginTest()[pri:0, instance:com.flipkart.tasks.test.LoginTest@2756c0a7]" started-at="2022-02-25T22:16:50 IST" name="loginTest" finished-at="2022-02-25T22:17:12 IST" duration-ms="22665" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.flipkart.tasks.test.LoginTest@2756c0a7]" started-at="2022-02-25T22:17:16 IST" name="closeDriver" finished-at="2022-02-25T22:18:07 IST" duration-ms="50950" status="PASS">
+        </test-method> <!-- addCart -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.flipkart.tasks.test.SmokeTest@277f7dd3]" started-at="2022-03-02T19:55:20 IST" name="closeDriver" finished-at="2022-03-02T19:56:10 IST" duration-ms="50910" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
-      </class> <!-- com.flipkart.tasks.test.LoginTest -->
-    </test> <!-- TestSmoke -->
-  </suite> <!-- Suite -->
+      </class> <!-- com.flipkart.tasks.test.SmokeTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

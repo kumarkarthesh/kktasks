@@ -43,30 +43,25 @@ public class SmokeTest extends BaseTest {
 	
 
 	}
-
-	
-	@Test (priority=0)
-	public void login() throws IOException, InterruptedException {
-	
-		//Login
+	@Test
+	public void login() throws IOException {
 		
-		loginPage.username();
-		loginPage.password();
-		loginPage.loginButtonClic(0);
-		//homePage = loginPage.loginButtonClick();
-		log.info("Login button clicked");
+		Assert.assertTrue(loginPage.isLoginPageDisplayed());
+		loginPage.click_Username().sendKeys(getData().getProperty("Username"));
+		loginPage.click_Password().sendKeys(getData().getProperty("Password"));
+		//loginPage.click_Password().sendKeys("hghw");
+		loginPage.clickLoginButton();
 		
-		//Login validation
-		homePage.pageRefresh();
-		String actualName = homePage.get_profileMenu().getText();
+		//Login Validation
+		String actualName = homePage.getProfileName().getText();
+		System.out.println(actualName);
 		if (!	(actualName.equals(getData().getProperty("ProfileName")))	) {
 			log.warn("UserName does not matches with data");
-			util.takeSnap();
-			assertTrue(false);
-			
+			util.takeSnap("Login_Failed.png",driver);
+			Assert.assertTrue(false);
 		}
-		
-		
+		log.info("Login passed");
+		 
 	}
 	
 	
@@ -78,37 +73,23 @@ public class SmokeTest extends BaseTest {
 	}
 	
 	
-	@Test (dataProvider="searchData", dependsOnMethods= {"login"}, enabled=false )
+	@Test (dataProvider="searchData", dependsOnMethods= {"login"}, enabled=true )
+	public void addCart(String query, String Brand,String criteria1, String criteria2) throws InterruptedException {
 	
-	public void addToCart(String query, String Brand, String criteria1, String criteria2) throws InterruptedException {
-		
-		String parentWindow="";
 		homePage.inputSearch(query);
+		homePage.searchFor(query);
 		searchResultsPage = new SearchResultsPage(driver);
-		List<WebElement> allItems =searchResultsPage.get_items();
-		
-		for (int i = 0; i < allItems.size(); i++) {
-			String product = allItems.get(i).getText();
-			//System.out.println(product);
-			if (product.contains(Brand)	&& product.contains(criteria1)) {
-				String productName = allItems.get(i).getText();
-				allItems.get(i).click();
-				log.info("Selected Product to add in Cart.");
-				System.out.println("Product clicked :"+ productName);
-				parentWindow = searchResultsPage.getWindowHandle();
-				break;
-			} 
-			
-		}
-	
+		searchResultsPage.selectItem(2);
 		itemDetailsPage = new ItemDetailsPage(driver);
-		itemDetailsPage.addToCartBtn().click();
-		log.info("Added to Cart");
-		wait.until(ExpectedConditions.urlToBe("https://www.flipkart.com/viewcart?otracker=PP_GoToCart"));
-		driver.close();
-		driver.switchTo().window(parentWindow);	
+		Assert.assertTrue(itemDetailsPage.isPageOpened());
+		itemDetailsPage.gotoItemPageWindow();
+		Assert.assertTrue(itemDetailsPage.isProductAvailable());
+		itemDetailsPage.clickAddToCart();
 		
 	}
+	
+	
+	
 	
 	@Test (dependsOnMethods= {"login"}, enabled=false)
 	public void linkValidation()  {
@@ -120,7 +101,7 @@ public class SmokeTest extends BaseTest {
 	}
 	
 	
-	@Test(dependsOnMethods= {"login"})
+	@Test(enabled = false, dependsOnMethods= {"login"})
 	public void cartTest() throws InterruptedException {
 	
 		
@@ -155,6 +136,21 @@ public class SmokeTest extends BaseTest {
 		System.out.println("Actual Cart value sum : "  +actualCartValue);
 		Assert.assertEquals(actualCartValue, cartValueSum);
 		
+	}
+	
+	@Test(enabled = true, dependsOnMethods= {"login"})
+	public void cart() {
+		driver.get(getData().getProperty("CartURL"));
+		
+		cartPage = new CartPage(driver);
+		List <Integer> prices = cartPage.getPrices();
+		List <Integer> quantity = cartPage.getQuantity();
+		System.out.println("prices ---> : " +prices + "\n quanity ---> : "+quantity);
+		int totalPrice = 0;		
+			for (int i = 0; i < prices.size(); i++) {
+				totalPrice +=  prices.get(i) * quantity.get(i) ;
+			}
+		System.out.println("Total price : " + totalPrice);
 	}
 	
 	

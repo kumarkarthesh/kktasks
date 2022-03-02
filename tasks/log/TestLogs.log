@@ -141,3 +141,107 @@
 [INFO ] 2022-02-25 22:16:52.771 [TestNG-test=TestSmoke-2] BaseTest - Login button clicked
 [INFO ] 2022-02-25 22:16:53.209 [TestNG-test=TestSmoke-1] BaseTest - Login button clicked
 [INFO ] 2022-02-25 22:17:16.384 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 17:41:50.062 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 17:45:09.970 [main] BaseTest - Login button clicked
+[WARN ] 2022-03-01 17:45:25.785 [main] BaseTest - UserName does not matches with data
+[INFO ] 2022-03-01 17:45:26.393 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 18:51:52.134 [main] BaseTest - Login button clicked
+[WARN ] 2022-03-01 18:52:09.448 [main] BaseTest - UserName does not matches with data
+[INFO ] 2022-03-01 18:52:11.616 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 18:54:53.442 [main] BaseTest - Login button clicked
+[WARN ] 2022-03-01 18:54:58.211 [main] BaseTest - UserName does not matches with data
+[INFO ] 2022-03-01 18:54:58.359 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 18:58:24.972 [main] BaseTest - Login button clicked
+[WARN ] 2022-03-01 18:58:29.189 [main] BaseTest - UserName does not matches with data
+[INFO ] 2022-03-01 18:58:44.141 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 19:00:34.923 [main] BaseTest - Login button clicked
+[WARN ] 2022-03-01 19:00:38.106 [main] BaseTest - UserName does not matches with data
+[INFO ] 2022-03-01 19:00:39.779 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 19:28:18.847 [main] BaseTest - Login button clicked
+[WARN ] 2022-03-01 19:28:21.229 [main] BaseTest - UserName does not matches with data
+[INFO ] 2022-03-01 19:28:21.526 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 19:31:15.760 [main] BaseTest - Login button clicked
+[WARN ] 2022-03-01 19:31:17.985 [main] BaseTest - UserName does not matches with data
+[INFO ] 2022-03-01 19:31:18.194 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 19:33:14.624 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 19:41:31.126 [main] BaseTest - Login button clicked
+[WARN ] 2022-03-01 19:41:45.500 [main] BaseTest - UserName does not matches with data
+[INFO ] 2022-03-01 19:41:46.062 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 19:46:47.027 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 19:50:32.336 [main] BaseTest - Login button clicked
+[WARN ] 2022-03-01 19:50:35.534 [main] BaseTest - UserName does not matches with data
+[INFO ] 2022-03-01 19:50:35.925 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 20:05:46.746 [main] BaseTest - Login button clicked
+[INFO ] 2022-03-01 20:06:00.895 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 20:07:03.647 [main] BaseTest - Login button clicked
+[INFO ] 2022-03-01 20:07:08.115 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 20:12:48.566 [main] BaseTest - Login button clicked
+[INFO ] 2022-03-01 20:13:01.169 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 20:16:32.322 [main] BaseTest - Login button clicked
+[INFO ] 2022-03-01 20:16:44.687 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 20:46:49.670 [main] BaseTest - Quiting Driver.
+[WARN ] 2022-03-01 20:58:48.754 [main] BaseTest - UserName does not matches with data
+[INFO ] 2022-03-01 20:58:49.010 [main] BaseTest - Quiting Driver.
+[WARN ] 2022-03-01 21:01:27.497 [main] BaseTest - UserName does not matches with data
+[INFO ] 2022-03-01 21:01:30.428 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 21:51:20.831 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 21:56:24.416 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 21:59:13.727 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 22:03:22.125 [main] BaseTest - Login passed
+[INFO ] 2022-03-01 22:03:24.121 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 22:46:27.811 [main] BaseTest - Quiting Driver.
+[ERROR] 2022-03-01 23:09:18.141 [main] BaseTest - TimeOutException
+[INFO ] 2022-03-01 23:09:18.421 [main] BaseTest - Quiting Driver.
+[ERROR] 2022-03-01 23:14:18.855 [TestNG-test=TestSmoke-1] BaseTest - TimeOutException
+[INFO ] 2022-03-01 23:14:21.112 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 23:15:20.801 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-01 23:41:54.609 [main] BaseTest - Login passed
+[INFO ] 2022-03-01 23:41:55.642 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 14:44:39.467 [TestNG-test=TestSmoke-1] BaseTest - Login passed
+[INFO ] 2022-03-02 14:44:43.668 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 14:49:37.565 [TestNG-test=TestSmoke-1] BaseTest - Login passed
+[INFO ] 2022-03-02 14:49:40.281 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 14:59:07.297 [main] BaseTest - Login passed
+[INFO ] 2022-03-02 14:59:16.289 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 15:02:55.162 [TestNG-test=TestSmoke-1] BaseTest - Login passed
+[INFO ] 2022-03-02 15:02:59.795 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 15:08:36.662 [TestNG-test=TestSmoke-1] BaseTest - Login passed
+[INFO ] 2022-03-02 15:08:38.430 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 15:13:00.609 [TestNG-test=TestSmoke-1] BaseTest - Login passed
+[INFO ] 2022-03-02 15:13:02.559 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 16:08:18.841 [TestNG-test=TestSmoke-1] BaseTest - Login passed
+[INFO ] 2022-03-02 16:08:18.908 [TestNG-test=TestSmoke-2] BaseTest - Reading excel 
+[INFO ] 2022-03-02 16:08:25.721 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 18:33:24.166 [main] BaseTest - Login passed
+[INFO ] 2022-03-02 18:33:24.221 [main] BaseTest - Reading excel 
+[INFO ] 2022-03-02 18:33:32.054 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 18:38:44.968 [main] BaseTest - Login passed
+[INFO ] 2022-03-02 18:38:45.027 [main] BaseTest - Reading excel 
+[INFO ] 2022-03-02 18:38:56.730 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 18:45:04.391 [main] BaseTest - Login passed
+[INFO ] 2022-03-02 18:45:04.477 [main] BaseTest - Reading excel 
+[INFO ] 2022-03-02 18:45:15.046 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 18:47:45.185 [main] BaseTest - Login passed
+[INFO ] 2022-03-02 18:47:45.218 [main] BaseTest - Reading excel 
+[INFO ] 2022-03-02 18:48:11.574 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 18:53:48.889 [main] BaseTest - Login passed
+[INFO ] 2022-03-02 18:53:48.954 [main] BaseTest - Reading excel 
+[INFO ] 2022-03-02 18:54:03.252 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 19:34:58.101 [main] BaseTest - Login passed
+[INFO ] 2022-03-02 19:34:58.142 [main] BaseTest - Reading excel 
+[INFO ] 2022-03-02 19:35:11.949 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 19:37:38.405 [main] BaseTest - Login passed
+[INFO ] 2022-03-02 19:37:38.446 [main] BaseTest - Reading excel 
+[INFO ] 2022-03-02 19:37:50.764 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 19:41:31.096 [main] BaseTest - Login passed
+[INFO ] 2022-03-02 19:41:31.122 [main] BaseTest - Reading excel 
+[INFO ] 2022-03-02 19:41:39.790 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 19:45:01.845 [main] BaseTest - Login passed
+[INFO ] 2022-03-02 19:45:01.908 [main] BaseTest - Reading excel 
+[INFO ] 2022-03-02 19:45:33.393 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 19:53:25.203 [main] BaseTest - Login passed
+[INFO ] 2022-03-02 19:53:25.304 [main] BaseTest - Reading excel 
+[INFO ] 2022-03-02 19:53:53.912 [main] BaseTest - Quiting Driver.
+[INFO ] 2022-03-02 19:54:58.927 [main] BaseTest - Login passed
+[INFO ] 2022-03-02 19:54:58.974 [main] BaseTest - Reading excel 
+[INFO ] 2022-03-02 19:55:20.062 [main] BaseTest - Quiting Driver.

@@ -8,9 +8,9 @@
     <classes>
       <class name="POM_task.Test.SmokeTest">
         <methods>
+          <include name="linkValidation"/>
           <include name="closeDriver"/>
           <include name="setup"/>
-          <include name="addToCart"/>
           <include name="login"/>
           <include name="createDriver"/>
         </methods>

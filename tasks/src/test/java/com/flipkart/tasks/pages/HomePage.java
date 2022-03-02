@@ -39,13 +39,12 @@ public class HomePage extends BasePage {
 		_searchBox.sendKeys(s);
 	}
 	
-	@FindBy(xpath="//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[2]/form/div/button")
+	@FindBy(xpath="//button[@type='submit']")
 	private WebElement _buttonSearch;
 	
-	public SearchResultsPage clickSearchButton() {
+	public void clickSearchButton() {
 		 util.explicitWait_Clickable(_buttonSearch, driver);
 		_buttonSearch.click();
-		return new SearchResultsPage(driver); 
 	}
 
 	@FindBy(xpath="//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[3]/div/div/div/a")
@@ -91,6 +90,16 @@ public class HomePage extends BasePage {
 		util.explicitWait_visible(_loginElement, driver);
 		return  _loginElement;
 	}
+	
+	@FindBy(xpath="//*[@id='container']/div/div[1]/div[1]/div[2]/div[3]/div/div//div[@class='exehdJ']")
+	private WebElement _profileName;
+	
+	public WebElement getProfileName() {
+		util.explicitWait_visible(_profileName, driver);
+		return _profileName;
+	}
+
+	
 	
 
 		/*

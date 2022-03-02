@@ -9,9 +9,10 @@
       <class name="com.flipkart.tasks.test.SmokeTest">
         <methods>
           <include name="setup"/>
-          <include name="cartPage"/>
+          <include name="addCart"/>
           <include name="login"/>
           <include name="createDriver"/>
+          <include name="closeDriver"/>
         </methods>
       </class> <!-- com.flipkart.tasks.test.SmokeTest -->
     </classes>

@@ -35,25 +35,40 @@ public class BasePage  {
 	@FindBy(xpath="//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[3]/div/div")
 	private WebElement _profileMenu;
 	
-	
-	public  WebElement get_profileMenu() {
-		return _profileMenu;
-	}
-	
-	
-	
-	public void pageRefresh() {
-	
-		driver.navigate().refresh();
-		
-	}
-	
 	@FindBy(xpath="//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[2]/form/div/div/input")
 	private WebElement _searchBox;
 	
 	@FindBy(xpath="//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[2]/form/div/button")
 	private WebElement _searchBtn;
 	
+	@FindBy(xpath="//div[@class='_2QfC02']/button")
+	private WebElement _closeLoginBtn;
+	
+	@FindBy(tagName="a")
+	private List<WebElement> links;
+	
+	
+	
+	public  WebElement get_profileMenu() {
+		util.explicitWait_visible(_profileMenu, driver);
+		return _profileMenu;
+	}
+	
+	
+	
+	public void pageRefresh() {
+		driver.navigate().refresh();
+	}
+	
+	public void searchFor(String query) {
+		new Actions(driver).doubleClick(_searchBox).perform();
+		_searchBox.sendKeys(query);
+		util.explicitWait_Clickable(_searchBtn,driver);
+		_searchBtn.click();
+	}
+	
+	
+	//
 	public void inputSearch(String data) {
 		new Actions(driver).doubleClick(_searchBox).perform();
 		_searchBox.sendKeys(data);
@@ -62,8 +77,6 @@ public class BasePage  {
 		
 	}
 
-	@FindBy(xpath="//div[@class='_2QfC02']/button")
-	private WebElement _closeLoginBtn;
 	
 	
 	
@@ -92,8 +105,7 @@ public class BasePage  {
 	}
 	
 
-	@FindBy(tagName="a")
-	private List<WebElement> links;
+
 	
 	public void validateLinks() {
 		
@@ -125,7 +137,9 @@ public class BasePage  {
 		} 
 		sa.assertAll();
 	}
-
+	
+	
+	//
 	private void getWindowControl(int i, String expectedURL) {
 		
 		String parent=driver.getWindowHandle();
@@ -150,7 +164,8 @@ public class BasePage  {
 		driver.switchTo().window(parent);
 		
 	}
-
+	
+	
 
 
 	public WebDriver getDriver() {

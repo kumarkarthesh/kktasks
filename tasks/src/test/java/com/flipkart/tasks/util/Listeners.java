@@ -12,19 +12,15 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import static com.flipkart.tasks.util.ConfigFileReader.getData;
 
-public class Listeners implements ITestListener{
+public class Listeners extends BaseTest implements ITestListener {
 
-	protected static ExtentReports report;
-	protected static ExtentSparkReporter reports;
-	protected static ExtentTest test;
-	
-	
+
 	public void onTestStart(ITestResult result) {
 		
 		//ITestListener.super.onTestStart(result);
 		System.out.println(result.getMethod().getMethodName()+" Test Started ");
 		test = report.createTest(result.getMethod().getMethodName());
-		test.log(Status.INFO, result.getMethod().getMethodName() + "test is started");
+		test.log(Status.INFO, result.getMethod().getMethodName() + " test is started");
 		
 	}
 
@@ -39,8 +35,8 @@ public class Listeners implements ITestListener{
 		
 		//TestListener.super.onTestFailure(result);
 		System.out.println(result.getMethod().getMethodName()+" Test Failed ");
-		test.log(Status.INFO, result.getMethod().getMethodName() + ". test failed");
-		test.fail(MediaEntityBuilder.createScreenCaptureFromPath(getData().getProperty("SnapshotPath")).build());
+		test.log(Status.INFO, result.getMethod().getMethodName() + " test failed");
+		test.fail(MediaEntityBuilder.createScreenCaptureFromPath( "\\reports\\Login_Failed.png" ).build());
 		
 	}
 

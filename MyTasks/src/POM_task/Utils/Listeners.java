@@ -1,7 +1,8 @@
 package POM_task.Utils;
 
-import org.testng.ITestContext;
 import static POM_task.Utils.ConfigFileReader.prop;
+
+import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
@@ -10,7 +11,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import POM_task.Utils.ConfigFileReader;
 
 public class Listeners implements ITestListener {
 	protected static ExtentReports report;
@@ -33,7 +33,7 @@ public class Listeners implements ITestListener {
 		// TODO Auto-generated method stub
 		//ITestListener.super.onTestSuccess(result);
 		System.out.println(result.getMethod().getMethodName()+" Test Passed ");
-		test.log(Status.INFO, result.getMethod().getMethodName() + "test is passed");
+		test.log(Status.INFO, result.getMethod().getMethodName() + " test is passed");
 	}
 
 	@Override
@@ -43,6 +43,7 @@ public class Listeners implements ITestListener {
 		System.out.println(result.getMethod().getMethodName()+" Test Failed ");
 		test.log(Status.INFO, result.getMethod().getMethodName() + ". test failed");
 		test.fail(MediaEntityBuilder.createScreenCaptureFromPath(prop.getProperty("SnapshotPath")).build());
+		
 	}
 
 	@Override

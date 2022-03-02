@@ -6,7 +6,7 @@
 </listeners>
   <test thread-count="5" name="TestSmoke" >
     <classes>
-		<class name="com.flipkart.tasks.test.LoginTest"/>
+		
 		<class name="com.flipkart.tasks.test.SmokeTest"/> 
       	  </classes>
   </test> <!-- Test -->

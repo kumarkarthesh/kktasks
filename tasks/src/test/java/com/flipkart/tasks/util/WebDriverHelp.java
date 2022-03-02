@@ -13,40 +13,50 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class WebDriverHelp extends BaseTest {
 	
 	
 	public  void implicitWait() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10000));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
 	
 	public  void explicitWait_Clickable(WebElement element, WebDriver driver) {
-		new WebDriverWait(driver ,Duration.ofSeconds(10000))
+		new WebDriverWait(driver ,Duration.ofSeconds(10))
 					.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
 
 	public  void explicitWait_visible(WebElement element, WebDriver driver) {
-		new WebDriverWait(driver ,Duration.ofSeconds(10000))
+		try {
+		new WebDriverWait(driver ,Duration.ofSeconds(30))
 					.until(ExpectedConditions.visibilityOf(element));
+		}
+		catch (TimeoutException e) {
+			log.error("TimeOutException");
+			Assert.assertTrue(false,"TimeoutException");
+		}
+		
 	}
 
-	public  void takeSnap() throws IOException {
+	public  void takeSnap(String filename, WebDriver driver) throws IOException {
 		
 		try {
 			TakesScreenshot scrnsct = ((TakesScreenshot)driver);
 			File srcFile = scrnsct.getScreenshotAs(OutputType.FILE);
 			
-			File dest = new File(getData().getProperty("SnapshotPath"));
+			File dest = new File("reports\\" + filename);
 			FileUtils.copyFile(srcFile, dest);
-		} catch (WebDriverException e) {
+			System.out.println("Snapsnot taken for filename : " + filename);
+		} catch (WebDriverException e) { 
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -56,25 +66,25 @@ public class WebDriverHelp extends BaseTest {
 	
 	
 	}
-
+ 
 	
 	public  void explicitWait_invisible(WebElement element) {
 		// TODO Auto-generated method stub
-		new WebDriverWait(driver, Duration.ofSeconds(10000)).until(ExpectedConditions.visibilityOf(element));
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(element));
 	
 	
 	}
 	
 	
 	public  void explicitWait_stale(WebElement element) {
-		new WebDriverWait(driver, Duration.ofSeconds(10000)).until(ExpectedConditions.stalenessOf(element));
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.stalenessOf(element));
 		
 	}
 
 	
 	public  void explicitWait_visible(List<WebElement> element, WebDriver driver) {
 		// TODO Auto-generated method stub
-		new WebDriverWait(driver ,Duration.ofSeconds(10000))
+		new WebDriverWait(driver ,Duration.ofSeconds(10))
 		.until(ExpectedConditions.visibilityOfAllElements(element));
 	}
 
@@ -94,6 +104,20 @@ public class WebDriverHelp extends BaseTest {
 			flag = false;
 		}
 		return flag;
+	}
+
+
+	public void waitForPageLoad(WebDriver driver) {
+		// TODO Auto-generated method stub
+		new WebDriverWait(driver,Duration.ofSeconds(10))
+			.until(ExpectedConditions.urlToBe(getData().getProperty("CartURL")));
+	}
+
+
+	public void waitForSearchResults(WebDriver driver) {
+		// TODO Auto-generated method stub
+		new WebDriverWait(driver,Duration.ofSeconds(10))
+		.until(ExpectedConditions.not(ExpectedConditions.urlToBe(getData().getProperty("URL"))));
 	}
 	
 

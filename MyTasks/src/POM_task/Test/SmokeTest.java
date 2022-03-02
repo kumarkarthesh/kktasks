@@ -1,15 +1,13 @@
 package POM_task.Test;
 
-import static POM_task.Utils.ConfigFileReader.prop;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.JavascriptExecutor; 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-
 
 import POM_task.Pages.HomePage;
 import POM_task.Pages.ItemDetailsPage;
@@ -52,8 +50,8 @@ public class SmokeTest extends BaseTest {
 		//Login validation
 		getDriver().navigate().refresh();
 		String actualName = homePage.get_profileMenu().getText();
-		
-		
+		System.out.println(ConfigFileReader.prop.getProperty("ProfileName"));
+		 
 		if (!	(actualName.equals(ConfigFileReader.prop.getProperty("ProfileName")))	) {
 
 			util.takeSnap();
@@ -62,51 +60,20 @@ public class SmokeTest extends BaseTest {
 		}
 		
 		
-		//homePage.moveOverMenu();
-		//profilePage = homePage.clickMyProfile(); 
-		
-		//System.out.println("=========\n Profile Page ");
-		//String actualName = profilePage.profileName();
-		
-		
-		
-		//System.out.println(we);
-		//System.out.println("By javasript : " +we.getText());
-		
-		
-		//homePage.moveOverMenu();
-		/*
-		 * profilePage = homePage.clickMyProfile(); System.out.println("profile Page ");
-		 * String actualName = profilePage.profileName(); new
-		 * WebDriverHelp().takeSnap(); Assert.assertEquals(actualName, "Karthesh");
-		 * 
-		 * homePage = profilePage.clickHome();
-		 * 
-		 * 
-		 */
-		//Thread.sleep(10000);
-				//new WebDriverWait(getDriver(), 30).until(ExpectedConditions.invisibilityOf(getDriver().findElement(By.xpath("/html/body/div[2]/div/div/div"))));
-				//WebDriverHelp.explicitWait_stale(getDriver().findElement(By.xpath("//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[3]/div/div")));
-				//homePage = new HomePage(getDriver());
-	
-		//WebElement we = getDriver().findElement(By.xpath("//div[@class='_1cmsER']/following-sibling::div[1]//div[@class='exehdJ']"));
-		//String name = "document.evaluate('//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[3]/div/div/div/div',document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;";
-		//WebElement we = (WebElement) js.executeScript( "document.evaluate('//*[@id=\"container\"]/div/div[1]/div[1]/div[2]/div[3]/div/div/div/div',document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;");
-	
-		
 	}
 	
-	
+	-
 	@Test(dependsOnMethods= {"login"})
-	//@Test
+	
 	public void linkValidation() throws IOException  {
-			
-		 
+		
+		if(getDriver().getCurrentUrl()!="")
 		System.out.println("========\n Link Validation Method ");
-
+		
 		homePage.validateLinks();
 			
 	}
+	
 	
 	
 	

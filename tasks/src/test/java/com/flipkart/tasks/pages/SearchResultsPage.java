@@ -24,7 +24,7 @@ public class SearchResultsPage extends BasePage {
 	private List<WebElement> _items;
 	
 	public List<WebElement> get_items() {
-		util.explicitWait_visible(_items);
+		util.explicitWait_visible(_items,driver);
 		return _items;
 	}
 
@@ -45,6 +45,15 @@ public class SearchResultsPage extends BasePage {
 		
 	}
 
+	public void selectItem(int i) {
+		util.waitForSearchResults(driver);
+		System.out.println("Selected item is : " + _items.get(i).getText());
+		System.out.println("First line is : "+ _items.get(i).getText().split("\n",2).toString());
+		_items.get(i).click();
+		
+	}
+
+	
 	
 }
                                                                                         

@@ -17,14 +17,17 @@ import org.testng.annotations.BeforeClass;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class BaseTest  {
 	public  WebDriver driver;
 	public ConfigFileReader config = new ConfigFileReader() ;
-	public ExtentReports eReports;
-	public ExtentTest test;
+	
 	public static WebDriverWait wait;
 	public  WebDriverHelp util;
+	protected static ExtentReports report;
+	protected static ExtentSparkReporter reports;
+	protected static ExtentTest test;
 	static {
 	    File log4j2File = new File(getData().getProperty("LogFilePath"));
 	    System.setProperty("log4j2.configurationFile", log4j2File.toURI().toString());
