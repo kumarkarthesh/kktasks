@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.flipkart.tasks.test.SmokeTest">
+      <class name="com.flipkart.tasks.test.WishListTest">
         <methods>
-          <include name="setup"/>
-          <include name="addCart" invocation-numbers="0"/>
           <include name="login"/>
           <include name="createDriver"/>
-          <include name="closeDriver"/>
+          <include name="addToWishListFromSimilarProducts"/>
         </methods>
-      </class> <!-- com.flipkart.tasks.test.SmokeTest -->
+      </class> <!-- com.flipkart.tasks.test.WishListTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

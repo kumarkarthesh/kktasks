@@ -94,9 +94,21 @@ public class HomePage extends BasePage {
 	@FindBy(xpath="//*[@id='container']/div/div[1]/div[1]/div[2]/div[3]/div/div//div[@class='exehdJ']")
 	private WebElement _profileName;
 	
+	@FindBy(xpath = "//div[text()='Wishlist']")
+	private WebElement _wishList;
+	
+	
+	
+	
 	public WebElement getProfileName() {
 		util.explicitWait_visible(_profileName, driver);
 		return _profileName;
+	}
+
+	public void clickWishList() {
+		// TODO Auto-generated method stub
+		util.explicitWait_visible(_wishList, driver);
+		_wishList.click();
 	}
 
 	

@@ -6,15 +6,13 @@
   </listeners>
   <test thread-count="5" parallel="classes" name="TestSmoke(failed)">
     <classes>
-      <class name="com.flipkart.tasks.test.SmokeTest">
+      <class name="com.flipkart.tasks.test.WishListTest">
         <methods>
-          <include name="setup"/>
-          <include name="addCart"/>
           <include name="login"/>
+          <include name="addingToWishList"/>
           <include name="createDriver"/>
-          <include name="closeDriver"/>
         </methods>
-      </class> <!-- com.flipkart.tasks.test.SmokeTest -->
+      </class> <!-- com.flipkart.tasks.test.WishListTest -->
     </classes>
   </test> <!-- TestSmoke(failed) -->
 </suite> <!-- Failed suite [Suite] -->

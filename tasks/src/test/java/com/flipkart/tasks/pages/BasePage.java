@@ -1,5 +1,7 @@
 package com.flipkart.tasks.pages;
 
+import static com.flipkart.tasks.util.ConfigFileReader.getData;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -47,6 +49,9 @@ public class BasePage  {
 	@FindBy(tagName="a")
 	private List<WebElement> links;
 	
+	@FindBy(xpath = "//div[@class='_2sKwjB']")
+	private WebElement _alertMessage;
+	
 	
 	
 	public  WebElement get_profileMenu() {
@@ -54,7 +59,11 @@ public class BasePage  {
 		return _profileMenu;
 	}
 	
-	
+	public boolean isAddedMessageDisplayed() {
+		util.explicitWait_visible(_alertMessage, driver);
+		Boolean check = util.isElementDisplayed(_alertMessage);
+		return check;
+	}
 	
 	public void pageRefresh() {
 		driver.navigate().refresh();
@@ -170,6 +179,34 @@ public class BasePage  {
 
 	public WebDriver getDriver() {
 		return driver;
+	}
+
+
+
+	public  void goToHomePage() {
+		// TODO Auto-generated method stub
+		try {
+			if	(driver.getCurrentUrl() != getData().getProperty("URL")	)
+				driver.get(getData().getProperty("URL"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+
+
+	public  void gotoCartPage() {
+		// TODO Auto-generated method stub
+		
+		try {
+			if	(driver.getCurrentUrl() != getData().getProperty("CartURL")	)
+				driver.get(getData().getProperty("CartURL"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

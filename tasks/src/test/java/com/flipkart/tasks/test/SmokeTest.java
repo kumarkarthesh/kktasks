@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.flipkart.tasks.pages.BasePage;
 import com.flipkart.tasks.pages.CartPage;
 import com.flipkart.tasks.pages.HomePage;
 import com.flipkart.tasks.pages.ItemDetailsPage;
@@ -37,7 +38,7 @@ public class SmokeTest extends BaseTest {
 	
 	@BeforeClass
 	public void setup() {
-	
+		
 		loginPage = new LoginPage(driver);
 		homePage = new HomePage(driver);
 	
@@ -45,11 +46,11 @@ public class SmokeTest extends BaseTest {
 	}
 	@Test
 	public void login() throws IOException {
-		
+	
 		Assert.assertTrue(loginPage.isLoginPageDisplayed());
 		loginPage.click_Username().sendKeys(getData().getProperty("Username"));
 		loginPage.click_Password().sendKeys(getData().getProperty("Password"));
-		//loginPage.click_Password().sendKeys("hghw");
+		//Assert.assertTrue(test.info("from assert not eqaul to null")==null);
 		loginPage.clickLoginButton();
 		
 		//Login Validation
@@ -74,17 +75,18 @@ public class SmokeTest extends BaseTest {
 	
 	
 	@Test (dataProvider="searchData", dependsOnMethods= {"login"}, enabled=true )
-	public void addCart(String query, String Brand,String criteria1, String criteria2) throws InterruptedException {
-	
-		homePage.inputSearch(query);
+	public void addToCart(String query, String brand,String criteria1, String criteria2) throws InterruptedException {
+		homePage.goToHomePage();
+		//homePage.inputSearch(query);
 		homePage.searchFor(query);
 		searchResultsPage = new SearchResultsPage(driver);
-		searchResultsPage.selectItem(2);
+		String productName = searchResultsPage.selectItem(2);
 		itemDetailsPage = new ItemDetailsPage(driver);
 		Assert.assertTrue(itemDetailsPage.isPageOpened());
 		itemDetailsPage.gotoItemPageWindow();
-		Assert.assertTrue(itemDetailsPage.isProductAvailable());
+		Assert.assertTrue(itemDetailsPage.isProductAvailable(),"Product Unavailable" );
 		itemDetailsPage.clickAddToCart();
+		
 		
 	}
 	
@@ -101,12 +103,11 @@ public class SmokeTest extends BaseTest {
 	}
 	
 	
-	@Test(enabled = false, dependsOnMethods= {"login"})
+	@Test(enabled = true, dependsOnMethods= {"login"})
 	public void cartTest() throws InterruptedException {
-	
 		
-		if	(driver.getCurrentUrl() != getData().getProperty("CartURL")	)
-			driver.get(getData().getProperty("CartURL"));
+		
+	
 		
 		cartPage = new CartPage(driver);
 		
@@ -117,7 +118,7 @@ public class SmokeTest extends BaseTest {
 		Assert.assertFalse(productsInCart.isEmpty(), "Cart is Empty");
 		
 		//Getting all Prices
-		List<Integer> prices = cartPage.g_allPrices();
+		List<Integer> prices = cartPage.g_allPrices();  
 		List<WebElement> pricesElement =  cartPage.get_allPrices();
 		
 		List<Integer> pricesInInteger = new ArrayList<Integer>();
@@ -141,7 +142,7 @@ public class SmokeTest extends BaseTest {
 	@Test(enabled = true, dependsOnMethods= {"login"})
 	public void cart() {
 		driver.get(getData().getProperty("CartURL"));
-		
+		//checking Total cart Value
 		cartPage = new CartPage(driver);
 		List <Integer> prices = cartPage.getPrices();
 		List <Integer> quantity = cartPage.getQuantity();
@@ -153,5 +154,11 @@ public class SmokeTest extends BaseTest {
 		System.out.println("Total price : " + totalPrice);
 	}
 	
+
+	
+		
+		
+		
+		
 	
 }

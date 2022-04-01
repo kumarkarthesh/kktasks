@@ -4,10 +4,10 @@
 <listeners>
 <listener class-name ="com.flipkart.tasks.util.Listeners"> 	</listener>
 </listeners>
-  <test thread-count="5" name="TestSmoke" >
+  <test  name="TestSmoke" >
     <classes>
 		
-		<class name="com.flipkart.tasks.test.SmokeTest"/> 
+		<class name="com.flipkart.tasks.test.WishListTest"/> 
       	  </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

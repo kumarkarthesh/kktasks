@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -28,6 +29,7 @@ public class BaseTest  {
 	protected static ExtentReports report;
 	protected static ExtentSparkReporter reports;
 	protected static ExtentTest test;
+	protected SoftAssert softAssert;
 	static {
 	    File log4j2File = new File(getData().getProperty("LogFilePath"));
 	    System.setProperty("log4j2.configurationFile", log4j2File.toURI().toString());
@@ -41,17 +43,18 @@ public class BaseTest  {
 		  
 		
 		System.setProperty(getData().getProperty("DriverName"), getData().getProperty("DriverPath"));
-		 driver= new ChromeDriver();
+		driver= new ChromeDriver();
 		util = new WebDriverHelp();
-		 driver.get(getData().getProperty("URL"));
-		// driver.manage().window().maximize();
+		driver.get(getData().getProperty("URL"));
+		//driver.manage().window().maximize();
 		// WebDriverHelp.implicitWait();
-		 wait = new WebDriverWait(driver, Duration.ofSeconds(30000));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30000));
+		softAssert = new SoftAssert();
 	}
 	
 	
 	
-	@AfterSuite
+	//@AfterSuite
 	public void closeDriver() throws Exception {
 		log.info("Quiting Driver.");
 		Thread.sleep(50000);
